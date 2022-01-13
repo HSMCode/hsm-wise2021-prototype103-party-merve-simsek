@@ -3,7 +3,7 @@ using UnityEngine;
 public class EndTrigger : MonoBehaviour
 {
     public GameManager gameManager;
-   void OnTriggerRnter ()
+   void OnTriggerEnter ()
        {
            gameManager.CompleteLevel();
        }
