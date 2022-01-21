@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/MainMenu.unity
+    guid: cf37cd2570d35c44f992448cedf62339
+  - enabled: 1
+    path: Assets/Scenes/ZeroCry.unity
+    guid: b599b9be8cfab50448de684d3eac3ae5
   m_configObjects: {}

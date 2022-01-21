@@ -4,13 +4,19 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
-    public float restartDelay = 1f;
+    // public float restartDelay = 1f;
 
     public GameObject completeLevelUI;
+    public GameObject gameOverUI;
     
          public void CompleteLevel ()
     {
         completeLevelUI.SetActive(true);
+    }
+
+     public void GameOver ()
+    {
+        gameOverUI.SetActive(true);
     }
         public void EndGame ()
     {
@@ -18,11 +24,16 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("Gamer Over");
-            Invoke("Restart", restartDelay);
+            // Invoke("Restart", restartDelay);
+        }
+        
+    }
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.R)) 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-    void Restart ()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    
 }
