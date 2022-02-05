@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Rigidbody rb;
     private bool goingRight;
-    public float Speed; // the Speed of changing Direction
-    public float forwardForce; // the Speed forward Force
+    public float speed = 10f;
     
+    private Rigidbody rb;
+    private Vector3 movement;
+
+    void Start()
+     {
+         rb = GetComponent<Rigidbody>();
+     }
     void Update()
-    {
-        rb.AddForce(0,0, forwardForce * Time.deltaTime); // Add a force on the  z-axis
-  
+    {         
+         movement = ( transform.forward) * speed; // multiply by speed and you got your movement ready
+         
         if (Input.GetKeyDown ("space")&& goingRight == true)  // pressing space going right
         {
           transform.Translate(new Vector3(2,0,0));
@@ -21,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
         {
           transform.Translate(new Vector3(-2,0,0));
         }
+    }
+
+    private void FixedUpdate()
+    {
+         rb.velocity = new Vector3(movement.x , rb.velocity.y, movement.z);
     }
 
     void OnCollisionEnter (Collision other)
