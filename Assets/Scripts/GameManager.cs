@@ -9,16 +9,17 @@ public class GameManager : MonoBehaviour
     public GameObject completeLevelUI;
     public GameObject gameOverUI;
     
-         public void CompleteLevel ()
+    public void CompleteLevel ()
     {
         completeLevelUI.SetActive(true);
     }
 
-     public void GameOver ()
+    public void GameOver ()
     {
         gameOverUI.SetActive(true);
     }
-        public void EndGame ()
+
+    public void EndGame ()
     {
         if (gameHasEnded == false)
         {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
         }
         
     }
+
     private void Update() 
     {
         if (Input.GetKeyDown(KeyCode.R)) 

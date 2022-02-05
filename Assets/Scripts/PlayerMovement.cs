@@ -6,8 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
     private bool goingRight;
-    public float Speed = 5f; // the Speed of changing Direction
-    public float forwardForce = 100f; // the Speed forward Force
+    public float Speed; // the Speed of changing Direction
+    public float forwardForce; // the Speed forward Force
+    
     void Update()
     {
         rb.AddForce(0,0, forwardForce * Time.deltaTime); // Add a force on the  z-axis
